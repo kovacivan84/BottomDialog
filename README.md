@@ -76,6 +76,10 @@ bottomDialog.onItemClick = { buttonText ->
 }
 ```
 
+## Limitations
+
+Currently it's working only if you are adding bottom dialog to ConstraintLayout. I'm working on it to make it work on any layout type.
+
 #### All options
 
 | Option      | Description |
