@@ -46,7 +46,7 @@ afterEvaluate {
                 pom {
                     name = PUBLISH_ARTIFACT_ID
                     description = "Simple lightweight library for adding bottom dialog view"
-                    url = 'https://github.com/kovacivan84/SplashScreenHelper'
+                    url = 'https://github.com/kovacivan84/BottomHelper'
                     licenses {
                         license {
                             name = 'Apache 2.0'
@@ -63,9 +63,9 @@ afterEvaluate {
 
                     // Version control info
                     scm {
-                        connection = 'scm:git:ssh://git@github.com:kovacivan84/SplashScreenHelper.git'
-                        developerConnection = 'scm:git:ssh://git@github.com:kovacivan84/SplashScreenHelper.git'
-                        url = 'https://github.com/kovacivan84/SplashScreenHelper.git/tree/main'
+                        connection = 'scm:git:ssh://git@github.com:kovacivan84/BottomHelper.git'
+                        developerConnection = 'scm:git:ssh://git@github.com:kovacivan84/BottomHelper.git'
+                        url = 'https://github.com/kovacivan84/BottomHelper.git/tree/main'
                     }
                 }
             }
