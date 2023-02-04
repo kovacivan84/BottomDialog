@@ -1,6 +1,5 @@
 package com.kovacivan.bottomdialog
 
-import android.graphics.Color
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -17,21 +16,12 @@ class MainActivity : AppCompatActivity() {
 		binding = ActivityMainBinding.inflate(layoutInflater)
 		setContentView(binding.root)
 
-		BottomDialog(this, binding.root)
-			.topButtonText("Delete")
-			.bottomButtonText("Edit")
-			.cancelButtonText("Cancel")
-			.showBottomDialog()
-
 		binding.button.setOnClickListener {
 			val bottomDialog = BottomDialog(this, binding.root)
 				.title("Do you want to delete or edit this item?")
 				.topButtonText("Delete")
 				.bottomButtonText("Edit")
 				.cancelButtonText("Cancel")
-				.animationDuration(2000)
-				.backgroundOverlayColor(Color.CYAN)
-				.backgroundOverlayTransparencyPercentage(0.7f)
 				.showBottomDialog()
 
 			bottomDialog.onItemClick = { buttonText ->
