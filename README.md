@@ -1,9 +1,19 @@
+[![](https://maven-badges.herokuapp.com/maven-central/com.kovacivan/BottomDialog/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.kovacivan/BottomDialog)
+
 # BottomDialog
 
 BottomDialog is an Android library that shows a slide-up animation dialog from the bottom of the screen. Something like on iOS. It is intended to be used for dialogs with yes/no/cancel answers. It is customizable so you can style it as you like.
 
 ## Screenshots!
 <img src="https://user-images.githubusercontent.com/24279917/216639539-92f20335-e36c-45e2-9ecb-000a90f40d9d.gif" width="200"/>        <img src="https://user-images.githubusercontent.com/24279917/216639881-5347829a-d07c-41a5-b382-e9bd638e9a5c.gif" width="200"/>        <img src="https://user-images.githubusercontent.com/24279917/216640242-9d3c6e95-741f-4a84-9fcd-9c2b45b57e78.gif" width="200"/>        <img src="https://user-images.githubusercontent.com/24279917/216640356-bfac339a-e9ba-4114-a1af-e78e4f004ee8.gif" width="200"/>
+
+## Implementation
+
+#### Gradle
+
+```bash
+implementation("com.kovacivan:BottomDialog:1.0")
+```
 
 ## Usage
 
