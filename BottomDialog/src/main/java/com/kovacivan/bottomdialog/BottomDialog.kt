@@ -5,15 +5,14 @@ import android.os.Handler
 import android.os.Looper
 import android.util.TypedValue
 import android.view.View
+import android.view.View.OnClickListener
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 
-class BottomDialog(activity: Activity, view: ConstraintLayout) {
+class BottomDialog(activity: Activity, private val listener: BottomDialogListener, private val view: ConstraintLayout) {
 
-	private var activity = activity
-	private var view: ConstraintLayout = view
 	private var bottomDialogModel = BottomDialogModel()
 
 	private val dialogView = activity.layoutInflater.inflate(R.layout.bottom_dialog_layout, null)
@@ -301,7 +300,7 @@ class BottomDialog(activity: Activity, view: ConstraintLayout) {
 			)
 			topButtonView.setOnClickListener {
 				hideBottomDialogView()
-				return@setOnClickListener onItemClick?.invoke(bottomDialogModel.topButtonText)!!
+				listener.topButtonClicked()
 			}
 		}
 
@@ -315,7 +314,7 @@ class BottomDialog(activity: Activity, view: ConstraintLayout) {
 		)
 		bottomButtonView.setOnClickListener {
 			hideBottomDialogView()
-			return@setOnClickListener onItemClick?.invoke(bottomDialogModel.bottomButtonText)!!
+			listener.bottomButtonClicked()
 		}
 
 		// Cancel button parameters
@@ -328,7 +327,7 @@ class BottomDialog(activity: Activity, view: ConstraintLayout) {
 		)
 		cancelButtonView.setOnClickListener {
 			hideBottomDialogView()
-			return@setOnClickListener onItemClick?.invoke(bottomDialogModel.cancelButtonText)!!
+			listener.cancelButtonClicked()
 		}
 
 		return this
