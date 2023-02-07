@@ -34,17 +34,32 @@ BottomDialog(this, binding.root)
 	.showBottomDialog()
 ```
 
-#### And this is how you get a return from button clicks:
+#### And this is how you handle button clicks:
 
 ```bash
+class MainActivity : AppCompatActivity(), BottomDialogListener {
+
+...
+
 val bottomDialog = BottomDialog(this, binding.root)
 	.topButtonText("Delete")
 	.bottomButtonText("Edit")
 	.cancelButtonText("Cancel")
 	.showBottomDialog()
 
-bottomDialog.onItemClick = { buttonText ->
-        // Do your stuff here
+...
+
+override fun topButtonClicked() {
+		// Do your stuff here
+	}
+
+	override fun bottomButtonClicked() {
+		// Do your stuff here
+	}
+
+	override fun cancelButtonClicked() {
+		// Do your stuff here
+	}
 }
 ```
 
@@ -85,10 +100,6 @@ bottomDialog.onItemClick = { buttonText ->
    }
 }
 ```
-
-## Limitations
-
-Currently it's working only if you are adding bottom dialog to ConstraintLayout. I'm working on it to make it work on any layout type.
 
 #### All options
 
