@@ -66,39 +66,29 @@ override fun topButtonClicked() {
 #### Button click example:
 
 ```bash
-bottomDialog.onItemClick = { buttonText ->
-   when (buttonText) {
-      "Delete" -> {
-         Toast.makeText(
-            this,
-            "You clicked on DELETE button",
-            Toast.LENGTH_SHORT
-         ).show()
-      }
-      "Edit" -> {
-         Toast.makeText(
-            this,
-            "You clicked on EDIT button",
-            Toast.LENGTH_SHORT
-         ).show()
-      }
-      "Cancel" -> {
-         Toast.makeText(
-            this,
-            "You clicked on CANCEL button",
-            Toast.LENGTH_SHORT
-         ).show()
-      }
-      else -> {
-         // Should never happened
-         Toast.makeText(
-            this,
-            "Something went wrong",
-            Toast.LENGTH_SHORT
-         ).show()
-      }
-   }
-}
+override fun topButtonClicked() {
+		Snackbar.make(
+			binding.root,
+			"Top button clicked",
+			Snackbar.LENGTH_SHORT
+		).show()
+	}
+
+	override fun bottomButtonClicked() {
+		Snackbar.make(
+			binding.root,
+			"Bottom button clicked",
+			Snackbar.LENGTH_SHORT
+		).show()
+	}
+
+	override fun cancelButtonClicked() {
+		Snackbar.make(
+			binding.root,
+			"Cancel button clicked",
+			Snackbar.LENGTH_SHORT
+		).show()
+	}
 ```
 
 #### All options
