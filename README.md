@@ -50,16 +50,16 @@ val bottomDialog = BottomDialog(this, binding.root)
 ...
 
 override fun topButtonClicked() {
-		// Do your stuff here
-	}
+	// Do your stuff here
+}
 
-	override fun bottomButtonClicked() {
-		// Do your stuff here
-	}
+override fun bottomButtonClicked() {
+	// Do your stuff here
+}
 
-	override fun cancelButtonClicked() {
-		// Do your stuff here
-	}
+override fun cancelButtonClicked() {
+	// Do your stuff here
+}
 }
 ```
 
