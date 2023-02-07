@@ -5,13 +5,12 @@ import android.os.Handler
 import android.os.Looper
 import android.util.TypedValue
 import android.view.View
-import android.view.View.OnClickListener
+import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.constraintlayout.widget.ConstraintSet
 
-class BottomDialog(activity: Activity, private val listener: BottomDialogListener, private val view: ConstraintLayout) {
+class BottomDialog(activity: Activity, private val listener: BottomDialogListener, private val view: ViewGroup) {
 
 	private var bottomDialogModel = BottomDialogModel()
 
@@ -231,51 +230,20 @@ class BottomDialog(activity: Activity, private val listener: BottomDialogListene
 	 */
 	fun showBottomDialog(): BottomDialog {
 
+		view.addView(dialogView)
+		showBottomDialogView()
+
 		// Overlay parameters
 		if (bottomDialogModel.backgroundOverlayState) {
 			overlayView.setBackgroundColor(bottomDialogModel.backgroundOverlayColor)
 			overlayView.alpha = bottomDialogModel.backgroundOverlayTransparencyPercentage
 		}
 
-		view.addView(dialogView)
-
-		// Positioning bottom dialog layout on the bottom of parent layout
-		ConstraintSet().apply {
-			clone(view)
-			connect(
-				dialogView.id, ConstraintSet.START,
-				view.id, ConstraintSet.START,
-				0
-			)
-			connect(
-				dialogView.id, ConstraintSet.END,
-				view.id, ConstraintSet.END,
-				0
-			)
-			connect(
-				dialogView.id, ConstraintSet.TOP,
-				view.id, ConstraintSet.TOP,
-				0
-			)
-			connect(
-				dialogView.id, ConstraintSet.BOTTOM,
-				view.id, ConstraintSet.BOTTOM,
-				0
-			)
-			applyTo(view)
-		}
-
-		val layoutParams = dialogView.layoutParams
-		layoutParams.width = ConstraintSet.MATCH_CONSTRAINT
-		layoutParams.height = ConstraintSet.MATCH_CONSTRAINT
-
 		if (bottomDialogModel.hideOnBackgroundClick) {
 			overlayView.setOnClickListener {
 				hideBottomDialogView()
 			}
 		}
-
-		showBottomDialogView()
 
 		// Title parameters
 		titleView.text = bottomDialogModel.titleText
