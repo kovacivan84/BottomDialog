@@ -12,7 +12,7 @@ BottomDialog is an Android library that shows a slide-up animation dialog from t
 #### Gradle
 
 ```bash
-implementation("com.kovacivan:BottomDialog:1.0")
+implementation("com.kovacivan:BottomDialog:1.1")
 ```
 
 ## Usage
